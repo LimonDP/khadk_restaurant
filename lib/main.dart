@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
                     style: TextButton.styleFrom(padding: EdgeInsets.all(12.0)),
                     onPressed: () {},
                     child: const Icon(
-                      Icons.home,
+                      Icons.restaurant_menu,
                       size: 27,
                     ),
                   ),
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                     style: TextButton.styleFrom(padding: EdgeInsets.all(12.0)),
                     onPressed: () {},
                     child: const Icon(
-                      Icons.home,
+                      Icons.settings,
                       size: 27,
                     ),
                   ),
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
                     style: TextButton.styleFrom(padding: EdgeInsets.all(12.0)),
                     onPressed: () {},
                     child: const Icon(
-                      Icons.home,
+                      Icons.person,
                       size: 27,
                     ),
                   ),
@@ -67,21 +67,34 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          drawer: Drawer(
-              child: ListView(
-            children: [
-              DrawerHeader(
-                  child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 60.0,
-                    backgroundColor: Colors.green,
-                  ),
-                  Text('Limon ray')
-                ],
-              ))
-            ],
-          )),
+          drawer: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.purple.shade400,
+                Colors.purple.shade200,
+                Colors.purple.shade100
+              ],
+            )),
+            child: Drawer(
+                backgroundColor: Colors.transparent,
+                child: ListView(
+                  children: [
+                    DrawerHeader(
+                        child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 60.0,
+                          backgroundImage: AssetImage('images/limon.jpg'),
+                        ),
+                        Text('Limon ray')
+                      ],
+                    ))
+                  ],
+                )),
+          ),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
